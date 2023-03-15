@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* border: 1px solid green; */
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('https://i.imgur.com/6rZ4491.jpg');
+}
+
+
+header {
+    position: relative;
+    height: 12vh;
+    border-bottom: solid 1px darkgray;
+    display: grid;
+    background-color: #fffacc;
+}
+
+.logo {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+}
+
+.logo img {
+    position: absolute;
+    display: block;
+    height: 9.5vh;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    z-index: -5;
+}
+
+h2 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items:flex-end;
+    padding-bottom: 10px
+}
+
+
+header button {
+    height: 30px;
+    background-color: rgb(81, 202, 246);
+    border: 1px solid rgb(143, 204, 254);
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+header button:hover {
+    cursor:pointer;
+}
+
+header input {
+    height: 30px;
+    padding: 3px;
+    border-radius: 8px;
+    border: 2px solid gray;
+}
+header input:hover {
+    cursor:text;
+}
+
+/* button.search {
+    aspect-ratio: 1;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 0px;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/images/search-icon.png');
+    background-color: white;
+} */
+
+button.home {
+    position: absolute;
+    left: 10%;
+    transform: translate(-50%,0);
+}
+
+button.share-catch {
+    position: absolute;
+    left: 27.5%;
+    transform: translate(-50%,0);
+}
+
+form.search {
+    position: absolute;
+    left: 75%;
+    transform: translate(-50%,0);
+}
+
+button.profile {
+    position: absolute;
+    border-radius: 100%;
+    left: 90%;
+    transform: translate(-50%,0);
+}
+
+main {
+    background-color: #fffacc;
+    width: 80%;
+    height: 88vh;
+    margin: 0 auto;
+    border-left: solid 1px darkgray;
+    border-right: solid 1px darkgray;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+
+}
+
+.grid-header {
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    padding: 0px 10px 10px 10px;
+    height: 12%;
+}

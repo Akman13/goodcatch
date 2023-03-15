@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Catch</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Good Catch</h1>
+            <img src="/images/goodcatch-logo.png" alt="goodcatch-logo">
+        </div>
+
+        <nav>
+            <button class="home">Home</button>
+            <button class="share-catch">Share a Catch</button>
+
+            <form class="search">
+                <input type="text" placeholder="Search...">
+                <!-- <button class="search"></button> -->
+            </form>
+
+            
+            <button class="profile"></button>
+        </nav>
+    </header>
+
+    
+    <main>
+        
+        <section class="grid-header">
+            
+            <h2>Recent Catches</h2>
+            
+            <form class="sort" action="#">
+                <label for="sort-options">
+                    Sort by
+                </label>
+
+                <select name="sort-options" id="sort-options">
+                    <option value="alphabet-asc">A-Z (asc.)</option>
+                    <option value="alphabet-desc">A-Z (desc.)</option>
+                </select>
+            </form>
+            
+        </section>
+
+
+
+        <section class="grid-cards">
+        </section>
+
+        
+        <%- body %>
+    </main>
+    
+</body>
+</html>
