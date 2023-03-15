@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Good Catch</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Lobster&family=Luckiest+Guy&family=Rubik&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,8 +18,13 @@
         </div>
 
         <nav>
-            <button class="home">Home</button>
-            <button class="share-catch">Share a Catch</button>
+            <form action="/" class="home">
+                <button class="home">Home</button>
+            </form>
+
+            <form action="/catch/new" class="share-catch">
+                <button class="share-catch">Share a Catch</button>
+            </form>
 
             <form class="search">
                 <input type="text" placeholder="Search...">
@@ -30,31 +38,9 @@
 
     
     <main>
-        
-        <section class="grid-header">
             
-            <h2>Recent Catches</h2>
-            
-            <form class="sort" action="#">
-                <label for="sort-options">
-                    Sort by
-                </label>
-
-                <select name="sort-options" id="sort-options">
-                    <option value="alphabet-asc">A-Z (asc.)</option>
-                    <option value="alphabet-desc">A-Z (desc.)</option>
-                </select>
-            </form>
-            
-        </section>
-
-
-
-        <section class="grid-cards">
-        </section>
-
-        
         <%- body %>
+
     </main>
     
 </body>

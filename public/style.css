@@ -1,22 +1,27 @@
 * {
     box-sizing: border-box;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Rubik', sans-serif;
+    ;
     /* border: 1px solid green; */
 }
 
 body {
     margin: 0;
     height: 100vh;
-    background-image: url('https://i.imgur.com/6rZ4491.jpg');
-}
+    background: linear-gradient(to top, #cce6ff97, #cce6ff97), url('https://i.imgur.com/6rZ4491.jpg') no-repeat top center;
+    background-size: cover;
 
+    /* background-image: url('https://i.imgur.com/6rZ4491.jpg');
+    background-color: #81eaff54; */
+
+}
 
 header {
     position: relative;
     height: 12vh;
-    border-bottom: solid 1px darkgray;
+    /* border-bottom: solid 1px darkgray; */
     display: grid;
-    background-color: #fffacc;
+    background-color: linear-gradient(to top, #cce6ff97, #cce6ff97);
 }
 
 .logo {
@@ -43,10 +48,6 @@ h1 {
     z-index: -5;
 }
 
-h2 {
-    margin: 0;
-}
-
 nav {
     display: flex;
     align-items:flex-end;
@@ -56,8 +57,8 @@ nav {
 
 header button {
     height: 30px;
-    background-color: rgb(81, 202, 246);
-    border: 1px solid rgb(143, 204, 254);
+    background-color: rgb(110 182 207);
+    border: 2px solid #f1f1f1;
     padding: 5px 15px;
     border-radius: 8px;
 }
@@ -69,7 +70,7 @@ header input {
     height: 30px;
     padding: 3px;
     border-radius: 8px;
-    border: 2px solid gray;
+    border: 2px solid #f1f1f1;
 }
 header input:hover {
     cursor:text;
@@ -87,13 +88,13 @@ header input:hover {
     background-color: white;
 } */
 
-button.home {
+form.home {
     position: absolute;
     left: 10%;
     transform: translate(-50%,0);
 }
 
-button.share-catch {
+form.share-catch {
     position: absolute;
     left: 27.5%;
     transform: translate(-50%,0);
@@ -107,27 +108,157 @@ form.search {
 
 button.profile {
     position: absolute;
-    border-radius: 100%;
     left: 90%;
     transform: translate(-50%,0);
+    border-radius: 100%;
+    border-style: none;
+    background-color: #fffacc; 
+    background-image: url('/images/default-avatar.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 main {
-    background-color: #fffacc;
+    background-color: floralwhite;
     width: 80%;
     height: 88vh;
     margin: 0 auto;
-    border-left: solid 1px darkgray;
-    border-right: solid 1px darkgray;
+    border-left: solid 1px #f1f1f1;
+    border-right: solid 1px #f1f1f1;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
-
 }
+
 
 .grid-header {
     display: flex;
     align-items:flex-end;
     justify-content: space-between;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 20px 10px 20px;
     height: 12%;
+}
+
+
+.grid-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+
+.grid-cards {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    height: 88%;
+}
+
+
+.grid-cards article {
+    border-radius: 4px;
+    overflow: hidden;
+    /* margin: 0 10px 0 10px; */
+}
+
+.img-tab {
+    position: relative;
+    height: 75%;
+    width: 100%;
+}
+
+.catch-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.img-tab .username {
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: 0;
+    padding: 2px 4px;
+    background-color: rgba(255, 250, 240, 0.887);
+    /* font-size: 0.8em; */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-decoration: none;
+    color: black;
+}
+
+
+div.info-tab {
+    position: relative;
+    background-color: #3d638f;
+    height: 25%;
+    width: 100%;
+    padding: 4px;
+}
+
+p.caption {
+    margin: 0;
+    color: beige;
+}
+
+
+.info-tab footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: beige;
+}
+
+.info-tab footer * {
+    margin: 25px 0 0 0;
+}
+
+.catch-details {
+    height: 88%;
+    padding: 20px;
+    padding-top: 0px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.photos img {
+    /* width: 100%; */
+    max-width: 90%;
+    max-height: 80%;
+    height: auto;
+    display: block;
+    margin: 0px 50px;
+}
+
+.catch-header {
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    padding: 0px 50px 10px 50px;
+    height: 12%;
+}
+
+.user-info {
+    display: flex;
+    align-items: flex-end;
+}
+
+.catch-header a {
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.catch-header img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+
 }

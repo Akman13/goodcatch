@@ -6,7 +6,6 @@ const port = process.env.PORT || 8080;
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
 
-// const db = require('./db');
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);

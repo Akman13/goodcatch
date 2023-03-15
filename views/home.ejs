@@ -1,0 +1,110 @@
+<section class="grid-header">
+            
+    <h2>Recent Catches</h2>
+    
+    <form class="sort" action="#">
+        <label for="sort-options">
+            Sort by
+        </label>
+
+        <select name="sort-options" id="sort-options">
+            <option value="alphabet-asc">A-Z (asc.)</option>
+            <option value="alphabet-desc">A-Z (desc.)</option>
+        </select>
+    </form>
+    
+</section>
+
+
+
+<section class="grid-cards">
+
+
+
+
+
+    <% for (catchCard of catches) { %>
+        <article>
+            <div class="img-tab">
+                <a href="/users/<%= catchCard.user_id %>" class="username"><%= catchCard.username %></a>
+                <a href="/catches/<%= catchCard.catch_id %>">
+                    <img src="<%= catchCard.image_url %>" alt="" class="catch-img">
+                </a>
+    
+            </div>
+            
+            <div class="info-tab">
+                <p class="caption"><%= catchCard.caption %></p>
+                
+                <footer>
+                    <p><%= catchCard.catch_location %></p>
+                    <p><%= catchCard.catch_date %></p>
+                </footer>
+    
+            </div>
+        </article>
+
+    <% } %>
+
+    <article>
+        <div class="img-tab">
+            <a href="#" class="username">Username here</a>
+            <a href="#">
+                <img src="/images/water-bg.jpg" alt="" class="catch-img">
+            </a>
+
+        </div>
+        
+        <div class="info-tab">
+            <p class="caption">Caption of the catch</p>
+            
+            <footer>
+                <p>Location</p>
+                <p>Date caught</p>
+            </footer>
+
+        </div>
+    </article>
+
+    <article>
+        <div class="img-tab">
+            <a href="#" class="username">Username here</a>
+            <a href="#">
+                <img src="/images/water-bg.jpg" alt="" class="catch-img">
+            </a>
+
+        </div>
+        
+        <div class="info-tab">
+            <p class="caption">Caption of the catch</p>
+            
+            <footer>
+                <p>Location</p>
+                <p>Date caught</p>
+            </footer>
+
+        </div>
+    </article>
+
+    <article>
+        <div class="img-tab">
+            <a href="#" class="username">Username here</a>
+            <a href="#">
+                <img src="/images/water-bg.jpg" alt="" class="catch-img">
+            </a>
+
+        </div>
+        
+        <div class="info-tab">
+            <p class="caption">Caption of the catch</p>
+            
+            <footer>
+                <p>Location</p>
+                <p>Date caught</p>
+            </footer>
+
+        </div>
+    </article>
+    
+
+</section>

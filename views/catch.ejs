@@ -1,0 +1,29 @@
+<section class="catch-header">
+    <h2><%= catchRecord.caption %></h2>
+
+    <div class="user-info">
+        <p><%= catchRecord.username %></p>
+
+        <a href="/users/<%= catchRecord.user_id %>">
+            <img src="<%= catchRecord.user_img_url %>" alt="">
+        </a>
+    </div>
+    
+</section>
+
+<section class="catch-details">
+
+    <section class="photos">
+        <img src="<%= catchRecord.image_url %>" alt="">
+    </section>
+
+
+    <section class="experience">
+        <p><%= catchRecord.experience %></p>
+        
+        <small>Caught at <%= catchRecord.catch_location %>, <%= catchRecord.catch_state %> on <%= catchRecord.catch_date %></small>
+
+    </section>
+
+
+</section>
