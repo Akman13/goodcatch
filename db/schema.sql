@@ -16,6 +16,7 @@ CREATE TABLE catches (
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(20),
+    email TEXT,
     password_digest TEXT,
     user_img_url TEXT,
     user_about TEXT
@@ -37,8 +38,11 @@ INSERT INTO catches (user_id, caption, experience, image_url, catch_state, catch
 
 
 -- Sample records in Users to keep things moving :-)
-INSERT INTO users (username, password_digest, user_img_url, user_about) VALUES ('fisherman101', 'pudding', 'https://static.vecteezy.com/system/resources/previews/005/176/777/non_2x/user-avatar-line-style-free-vector.jpg', 'I''m just here to keep this site running, and not in the devOps sense.');
+INSERT INTO users (username, email, password_digest, user_img_url, user_about) VALUES ('fisherman101', 'test@ga.co', 'pudding', 'https://static.vecteezy.com/system/resources/previews/005/176/777/non_2x/user-avatar-line-style-free-vector.jpg', 'I''m just here to keep this site running, and not in the devOps sense.');
 
-INSERT INTO users (username, password_digest, user_img_url, user_about) VALUES ('iLikeFish', 'pudding', 'https://static.vecteezy.com/system/resources/previews/005/176/777/non_2x/user-avatar-line-style-free-vector.jpg', 'I''m just here to keep this site running, and not in the devOps sense.');
+INSERT INTO users (username, email, password_digest, user_img_url, user_about) VALUES ('iLikeFish', 'test1@ga.co', 'pudding', 'https://static.vecteezy.com/system/resources/previews/005/176/777/non_2x/user-avatar-line-style-free-vector.jpg', 'I''m just here to keep this site running, and not in the devOps sense.');
 
-INSERT INTO users (username, password_digest, user_img_url, user_about) VALUES ('I LOVE fish', 'pudding', 'https://static.vecteezy.com/system/resources/previews/005/176/777/non_2x/user-avatar-line-style-free-vector.jpg', 'I''m just here to keep this site running, and not in the devOps sense.');
+INSERT INTO users (username, email, password_digest, user_img_url, user_about) VALUES ('I LOVE fish', 'test2@ga.co', 'pudding', 'https://static.vecteezy.com/system/resources/previews/005/176/777/non_2x/user-avatar-line-style-free-vector.jpg', 'I''m just here to keep this site running, and not in the devOps sense.');
+
+-- Digesting the existing user's passwords
+UPDATE users SET password_digest='$2b$10$8i.u1kVDpQ/IEfFY9SkjfOPZTsZcVQE1ov4CkI5CyciDVcEEN69bu' WHERE password_digest='pudding';

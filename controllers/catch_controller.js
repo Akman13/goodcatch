@@ -1,10 +1,18 @@
 const express = require('express');
 const db = require("./../db");
+const upload = require('./../middleware/upload');
 
 
 const router = express.Router();
 
-// Create a middleware function that 
+// Remaining:
+// Show edit & delete buttons at the catch page IF you are the creator
+// Make the edit page (redirect to catch form, but with preset values)\
+// Users: register
+// Users: profile page
+// Users: edit info
+// Extra functions :)
+
 
 router.get('/', (req, res) => { //GET the home page
 
@@ -30,7 +38,7 @@ router.get('/', (req, res) => { //GET the home page
                     } else {
 
                         catches[i].username = dbRes2.rows[0].username;
-                        catches[i].userId = dbRes2.rows[0].user_id;
+                        // catches[i].user_id = dbRes2.rows[0].user_id;
 
                         
                         if (i === dbRes.rows.length-1) {
@@ -42,6 +50,10 @@ router.get('/', (req, res) => { //GET the home page
             }
         }
     })
+})
+
+router.get('/catches/new', (req, res) => { //GET a new catch form
+    res.render('catch-form');
 })
 
 router.get('/catches/:id', (req, res) => { //GET a catch
@@ -92,12 +104,26 @@ router.get('/catches/:id', (req, res) => { //GET a catch
 
 })
 
-router.get('/catches/new', (req, res) => { //GET a new catch form
+router.post('/catches', upload.single("uploaded-file"), (req, res) => { //POST a new catch
+    // const catch_img_url = req.file.path;
+    // Middleware uploads it, we get the url path
+    // We have received the user's inputs
+    // Need to add them into the database
 
-})
+    const sql = 'INSERT INTO catches (user_id, caption, experience, image_url, catch_state, catch_location, catch_date) VALUES ($1, $2 ,$3 ,$4, $5, $6, $7);';
 
-router.post('/catches', (req, res) => { //POST a new catch
 
+    // Need to make a middleware that checks if they're logged in. If not, then take them to a login screen first with a message
+
+    db.query (sql, [req.session.user_id, req.body['caption'], req.body['experience'], req.file.path, req.body['catchState'], req.body['catchLocation'], req.body['catchDate']],(dbErr, dbRes) => {
+        if (dbErr) {
+            console.log(dbErr);
+            process.exit(1);
+
+        } else {
+            res.redirect('/');
+        }
+    })
 })
 
 router.get('/catches/:id/edit', (req, res) => { //GET an edit catch form

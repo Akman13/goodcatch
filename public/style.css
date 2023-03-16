@@ -10,10 +10,6 @@ body {
     height: 100vh;
     background: linear-gradient(to top, #cce6ff97, #cce6ff97), url('https://i.imgur.com/6rZ4491.jpg') no-repeat top center;
     background-size: cover;
-
-    /* background-image: url('https://i.imgur.com/6rZ4491.jpg');
-    background-color: #81eaff54; */
-
 }
 
 header {
@@ -22,6 +18,10 @@ header {
     /* border-bottom: solid 1px darkgray; */
     display: grid;
     background-color: linear-gradient(to top, #cce6ff97, #cce6ff97);
+}
+
+h3 {
+    margin: 0px;
 }
 
 .logo {
@@ -56,10 +56,10 @@ nav {
 
 
 header button {
-    height: 30px;
+    height: 35px;
     background-color: rgb(110 182 207);
     border: 2px solid #f1f1f1;
-    padding: 5px 15px;
+    padding: 5px 25px;
     border-radius: 8px;
 }
 header button:hover {
@@ -67,7 +67,7 @@ header button:hover {
 }
 
 header input {
-    height: 30px;
+    height: 35px;
     padding: 3px;
     border-radius: 8px;
     border: 2px solid #f1f1f1;
@@ -90,7 +90,7 @@ header input:hover {
 
 form.home {
     position: absolute;
-    left: 10%;
+    left: 12%;
     transform: translate(-50%,0);
 }
 
@@ -107,20 +107,38 @@ form.search {
 }
 
 button.profile {
+    padding: 25px 25px;
     position: absolute;
     left: 90%;
     transform: translate(-50%,0);
     border-radius: 100%;
     border-style: none;
-    background-color: #fffacc; 
+    /* background-color: #fffacc;  */
     background-image: url('/images/default-avatar.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
+form.login {
+    position: absolute;
+    left: 88%;
+    transform: translate(-50%,0);
+    border-radius: 100%;
+    border-style: none;
+}
+
+form.logout {
+    position: absolute;
+    left: 85%;
+    transform: translate(-50%,0);
+    border-radius: 100%;
+    border-style: none;
+}
+
+
 main {
-    background-color: floralwhite;
+    background-color: white;
     width: 80%;
     height: 88vh;
     margin: 0 auto;
@@ -160,6 +178,8 @@ main {
     border-radius: 4px;
     overflow: hidden;
     /* margin: 0 10px 0 10px; */
+    display: flex;
+    flex-direction: column;
 }
 
 .img-tab {
@@ -192,16 +212,22 @@ main {
 
 
 div.info-tab {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: #3d638f;
     height: 25%;
     width: 100%;
     padding: 4px;
 }
 
-p.caption {
+.caption p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     margin: 0;
     color: beige;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 
@@ -213,7 +239,7 @@ p.caption {
 }
 
 .info-tab footer * {
-    margin: 25px 0 0 0;
+    margin: 23px 0 0 0;
 }
 
 .catch-details {
@@ -260,5 +286,101 @@ p.caption {
     height: 100%;
     width: 100%;
     border-radius: 100%;
+}
 
+.form-bg {
+    background-color: #e5e5e5;
+    position: relative;
+    width: 100%;
+    height:fit-content;
+    height: 100%;
+}
+
+.login-page {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 50%;
+    min-height: 400px;
+    max-width: 350px;
+    padding: 53px 50px 35px 50px;
+    background-color: white;
+    border: 3px solid rgb(94, 150, 255);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.login-page label, .share-catch-page label {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 8px;
+}
+
+.login-page input, .share-catch-page input, .share-catch-page select {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid darkgray;    
+}
+
+.share-catch-page select {
+    background-color: white;
+}
+
+.share-catch-page textarea {
+    height: 60px;
+    width: 100%;
+    border: 2px solid darkgray;
+    border-radius: 4px;
+    resize: none;   
+}
+
+input#experience::placeholder {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 4px;
+}
+
+.login-page button, .share-catch-page button {
+    display: block;
+    margin: 30px auto;
+    padding: 5px 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 3px;
+    font-size: 1em;
+}
+.login-page button:hover, .share-catch-page button:hover {
+    cursor: pointer;
+}
+
+.email-message, .password-message {
+    color: red;
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+.share-catch-page {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 50%;
+    min-height: 500px;
+    max-width: 550px;
+    padding: 53px 50px 40px 50px;
+    background-color: white;
+    border: 3px solid rgb(94, 150, 255);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+div.share-catch-location {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }

@@ -1,0 +1,42 @@
+<div class="form-bg">
+    
+    <form action="/catches" method="post" class="share-catch-page" id="share-catch" enctype="multipart/form-data">
+        <h3>Share your Catch!</h3>
+        
+        <label for="caption">Catch Caption</label>
+        <input type="text" name="caption" id="caption" placeholder="Title your experience...">
+
+        <label for="experience">What was the Experience like?</label>
+        <textarea name="experience" id="experience" placeholder="Share your Experience..."></textarea>
+
+        <label for="photo">Upload a photo</label>
+        <input type="file" name="uploaded-file">
+        
+        <div class="share-catch-location">
+            <div class="catch-location">
+                <label for="catchState">State</label>
+                <select name="catchState" id="catchState" form="share-catch">
+                    <option value="vic">Victoria</option>
+                    <option value="nsw">New South Wales</option>
+                    <option value="cbr">Canberra</option>
+                    <option value="nt">Northern Territory</option>
+                    <option value="qld">Queensland</option>
+                    <option value="wa">Western Australia</option>
+                    <option value="sa">Southern Australia</option>
+                </select>
+            </div>
+            
+            <div class="catch-state">
+                <label for="catchLocation">Location</label>
+                <input type="text" name="catchLocation" placeholder="e.g. Dock Lake">
+            </div>
+        </div>
+
+        <label for="catchDate">Date</label>
+        <input type="date" name="catchDate" id="catchDate">
+
+        <button>Share</button>
+    
+    </form>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="form-bg">
+    
+    <form action="/login" method="post" class="login-page">
+        <h3>Login</h3>
+        
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Example@catch.com">
+        <% if (!emailExists) { %>
+            <p class="email-message"><%= emailMessage %></p>
+        <% } %>
+
+    
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <% if (!passwordCorrect) { %>
+            <p class="password-message"><%= passwordMessage %></p>
+        <% } %>
+
+        <button>Login</button>
+    
+    </form>
+
+</div>

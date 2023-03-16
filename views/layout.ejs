@@ -22,17 +22,28 @@
                 <button class="home">Home</button>
             </form>
 
-            <form action="/catch/new" class="share-catch">
+            <% if (isLoggedIn()) { %>
+            <form action="/catches/new" class="share-catch">
                 <button class="share-catch">Share a Catch</button>
             </form>
+            <% } %>
 
             <form class="search">
                 <input type="text" placeholder="Search...">
                 <!-- <button class="search"></button> -->
             </form>
 
-            
-            <button class="profile"></button>
+            <% if(isLoggedIn()) { %>
+                <button class="profile"></button>
+                <form action="/login" class="logout" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <button class="logout">Logout</button>
+                </form>
+            <% } else { %>
+                <form action="/login" class="login">
+                    <button class="login">Login</button>
+                </form>
+            <% } %>
         </nav>
     </header>
 
