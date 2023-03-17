@@ -1,25 +1,23 @@
 <div class="form-bg">
-
-    <% if (isLoggedIn()) { %>
-        <h3 class="welcome">Welcome back <%= currentUser.username %></h3>
-    <% } %>
     
-    <form action="/catches" method="post" class="share-catch-page" id="share-catch" enctype="multipart/form-data">
+    <form action="/catches/<%= catchData.catch_id %>" method="post" class="share-catch-page" id="share-catch" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
+
         <h3>Share your Catch!</h3>
         
         <label for="caption">Catch Caption</label>
-        <input type="text" name="caption" id="caption" placeholder="Title your experience...">
+        <input type="text" name="caption" id="caption" placeholder="Title your experience..." value="<%= catchData.caption %>">
 
         <label for="experience">What was the Experience like?</label>
-        <textarea name="experience" id="experience" placeholder="Share your Experience..."></textarea>
+        <textarea name="experience" id="experience" placeholder="Share your Experience..."><%= catchData.experience %></textarea>
 
         <label for="photo">Upload a photo</label>
         <input type="file" name="uploaded-file">
         
         <div class="share-catch-location">
-            <div class="catch-location">
+            <div class="catch-state">
                 <label for="catchState">State</label>
-                <select name="catchState" id="catchState" form="share-catch">
+                <select name="catchState" id="catchState" form="share-catch" value="<%= catchData.catch_state %>">
                     <option value="VIC">Victoria</option>
                     <option value="NSW">New South Wales</option>
                     <option value="CBR">Canberra</option>
@@ -30,14 +28,14 @@
                 </select>
             </div>
             
-            <div class="catch-state">
+            <div class="catch-location">
                 <label for="catchLocation">Location</label>
-                <input type="text" name="catchLocation" placeholder="e.g. Dock Lake">
+                <input type="text" name="catchLocation" placeholder="e.g. Dock Lake" value="<%= catchData.catch_location %>">
             </div>
         </div>
 
         <label for="catchDate">Date</label>
-        <input type="date" name="catchDate" id="catchDate">
+        <input type="date" name="catchDate" id="catchDate" value="<%= catchData.catch_date %>">
 
         <button>Share</button>
     

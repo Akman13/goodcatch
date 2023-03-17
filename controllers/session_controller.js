@@ -7,7 +7,11 @@ const checkForEmail = require('./../middleware/check_for_email');
 const router = express.Router();
 
 router.get('/login', (req, res) => {
-    res.render('login')
+    if (req.session.user_id) {
+        res.redirect('/');
+    } else {
+        res.render('login')
+    }
 })
 
 router.post('/login', checkForEmail, (req, res) => {
@@ -41,7 +45,6 @@ router.post('/login', checkForEmail, (req, res) => {
 })
 
 router.delete('/login', (req, res) => {
-    // delete session
     req.session.destroy(() => {
         res.redirect('/');
     })

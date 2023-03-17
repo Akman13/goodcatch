@@ -2,6 +2,7 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 8080;
+// const multer = require('multer');
 
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
@@ -21,19 +22,26 @@ app.use(session({
 }));
 
 
+
 const methodOverride = require('./middleware/method_override');
 const catchController = require('./controllers/catch_controller');
 const sessionController = require('./controllers/session_controller');
+const userController = require('./controllers/user_controller');
+const setCurrentUser = require('./middleware/set_current_user');
 const viewHelpers = require('./middleware/view_helpers');
+const upload = require('./middleware/upload');
+
 
 
 app.use(express.urlencoded({extended:true}));
+app.use(upload.single("uploaded-file"));
 app.use(methodOverride);
 
-
+app.use(setCurrentUser);
 app.use(viewHelpers);
 app.use(catchController);
 app.use(sessionController);
+app.use(userController);
 
 
 

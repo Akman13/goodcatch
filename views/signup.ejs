@@ -1,0 +1,51 @@
+<div class="form-bg">
+    
+    <form action="/users" method="post" class="signup-page" enctype="multipart/form-data">
+        <div class="pitch">
+            <h3>Create your Good Catch account</h3>
+            <h4>It's quick and easy!</h4>
+        </div>
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Your username">
+        <% if (badUsername) { %>
+            <p class="username-message warning"><%= message.usernameMessage %></p>
+        <% } %>
+
+        
+        
+        <div class="email-pw">
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Example@catch.com">
+                <% if (badEmail) { %>
+                    <p class="email-message warning"><%= message.emailMessage %></p>
+                <% } %>
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <% if (!passwordAdequate) { %>
+                    <p class="password-message warning"><%= message.passwordMessage %></p>
+                <% } %>
+            </div>
+        </div>
+
+        <label for="photo">Upload a profile picture</label>
+        <input type="file" name="uploaded-file">
+        <% if (badPhoto) { %>
+            <p class="password-message warning"><%= message.photoMessage %></p>
+        <% } %>
+
+        <label for="about">About you</label>
+        <textarea name="about" id="about" placeholder="Share a bit about yourself"></textarea>
+        <% if (badAbout) { %>
+            <p class="about-message warning"><%= message.aboutMessage %></p>
+        <% } %>
+        
+        <button>Signup</button>
+    
+    </form>
+
+</div>

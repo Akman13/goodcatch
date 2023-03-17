@@ -5,6 +5,10 @@
     /* border: 1px solid green; */
 }
 
+/* h2 {
+    margin: 0px;
+} */
+
 body {
     margin: 0;
     height: 100vh;
@@ -20,7 +24,7 @@ header {
     background-color: linear-gradient(to top, #cce6ff97, #cce6ff97);
 }
 
-h3 {
+h3, h4 {
     margin: 0px;
 }
 
@@ -43,22 +47,25 @@ h3 {
 }
 
 h1 {
+    font-size: 3.1em;
     text-align: center;
     margin: 0;
     z-index: -5;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #7db9ff;
 }
 
 nav {
     display: flex;
     align-items:flex-end;
-    padding-bottom: 10px
+    padding-bottom: 20px
 }
 
 
 header button {
     height: 35px;
-    background-color: rgb(110 182 207);
-    border: 2px solid #f1f1f1;
+    background-color: #7db9ff;
+    border: 1px solid #ffefd1;
     padding: 5px 25px;
     border-radius: 8px;
 }
@@ -70,7 +77,7 @@ header input {
     height: 35px;
     padding: 3px;
     border-radius: 8px;
-    border: 2px solid #f1f1f1;
+    border: 1px solid #ffefd1;
 }
 header input:hover {
     cursor:text;
@@ -90,7 +97,7 @@ header input:hover {
 
 form.home {
     position: absolute;
-    left: 12%;
+    left: 9%;
     transform: translate(-50%,0);
 }
 
@@ -106,26 +113,39 @@ form.search {
     transform: translate(-50%,0);
 }
 
-button.profile {
-    padding: 25px 25px;
+a.profile {
+    height: fit-content;
+    bottom: 13px;
     position: absolute;
     left: 90%;
     transform: translate(-50%,0);
     border-radius: 100%;
     border-style: none;
-    /* background-color: #fffacc;  */
-    background-image: url('/images/default-avatar.png');
+    /* background-image: url('/images/default-avatar.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-form.login {
+a.profile img {
+    height: 60px;
+}
+
+div.login {
     position: absolute;
     left: 88%;
     transform: translate(-50%,0);
     border-radius: 100%;
     border-style: none;
+    margin-bottom: -20px;
+}
+
+
+div.login a {
+    color: black;
+    font-size: 0.8em;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: white;
 }
 
 form.logout {
@@ -136,6 +156,24 @@ form.logout {
     border-style: none;
 }
 
+form.logout {
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    transform: translate(50%,0);
+    border-radius: 100%;
+    border-style: none;
+}
+form.logout button {
+    height: 35px;
+    background-color: #7db9ff;
+    border: 1px solid #ffefd1;
+    padding: 5px 25px;
+    border-radius: 8px;
+}
+form.logout button:hover {
+    cursor:pointer;
+}
 
 main {
     background-color: white;
@@ -146,6 +184,7 @@ main {
     border-right: solid 1px #f1f1f1;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+    position: relative;
 }
 
 
@@ -154,7 +193,7 @@ main {
     align-items:flex-end;
     justify-content: space-between;
     padding: 0px 20px 10px 20px;
-    height: 12%;
+    height: 6%;
 }
 
 
@@ -251,7 +290,11 @@ div.info-tab {
     gap: 30px;
 }
 
-.photos img {
+.photos {
+    height: 100%;
+}
+
+.catch-details .photos img {
     /* width: 100%; */
     max-width: 90%;
     max-height: 80%;
@@ -260,17 +303,54 @@ div.info-tab {
     margin: 0px 50px;
 }
 
+.user-header img {
+    max-width: 90%;
+    max-height: 80%;
+    height: auto;
+    display: block;
+    margin: auto auto;
+}
+
 .catch-header {
     display: flex;
     align-items:flex-end;
     justify-content: space-between;
-    padding: 0px 50px 10px 50px;
-    height: 12%;
+    padding: 0px 50px 0px 50px;
+    /* height: 6%; */
 }
 
 .user-info {
     display: flex;
     align-items: flex-end;
+}
+
+.user-header {
+    width: fit-content;
+    max-width: 60%;
+    height: 50%;
+    max-height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px 0px 50px;
+    /* height: 6%; */
+}
+
+.user-header h2 {
+    font-size: 2.5em;
+    margin-left: 100px;
+}
+
+.user-details {
+    width: 60%;
+    max-height: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: space-between;
+    padding: 50px 50px 0px 50px;
+    /* height: 6%; */
 }
 
 .catch-header a {
@@ -346,18 +426,18 @@ input#experience::placeholder {
     top: 4px;
 }
 
-.login-page button, .share-catch-page button {
+.login-page button, .share-catch-page button, .signup-page button {
     display: block;
     margin: 30px auto;
     padding: 5px 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 3px;
     font-size: 1em;
 }
-.login-page button:hover, .share-catch-page button:hover {
+.login-page button:hover, .share-catch-page button:hover, .signup-page button:hover {
     cursor: pointer;
 }
 
-.email-message, .password-message {
+.email-message, .password-message, .warning {
     color: red;
     font-style: italic;
     font-size: 0.7em;
@@ -383,4 +463,87 @@ div.share-catch-location {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+}
+
+form.edit-user button {
+    height: 35px;
+    background-color: #7db9ff;
+    border: 1px solid #ffefd1;
+    padding: 5px 25px;
+    border-radius: 8px;
+    margin: 30px 0px;
+}
+form.edit-user button:hover {
+    cursor: pointer;
+}
+
+form.edit button {
+    height: 35px;
+    background-color: #7db9ff;
+    border: 1px solid #ffefd1;
+    padding: 5px 25px;
+    border-radius: 8px;
+    margin: 30px 50px;
+}
+form.edit button:hover {
+    cursor: pointer;
+}
+
+div.modify {
+    display: flex;
+}
+
+.welcome {
+    padding: 20px 20px 10px 20px;
+}
+
+.signup-page {
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 30%;
+    min-height: 650px;
+    min-width: 500px;
+    padding: 53px 50px 35px 50px;
+    background-color: white;
+    border: 3px solid rgb(94, 150, 255);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.signup-page .pitch {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-page .email-pw {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-page label {
+    display: block;
+    margin-top: 33px;
+    margin-bottom: 8px;
+}
+
+.signup-page input {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid darkgray;    
+}
+
+.share-catch-page textarea, .signup-page textarea {
+    height: 90px;
+    width: 100%;
+    border: 2px solid darkgray;
+    border-radius: 4px;
+    resize: none;   
 }

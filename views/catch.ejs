@@ -1,3 +1,6 @@
+<% if (isLoggedIn()) { %>
+    <h3 class="welcome">Welcome back <%= currentUser.username %></h3>
+<% } %>
 <section class="catch-header">
     <h2><%= catchRecord.caption %></h2>
 
@@ -8,6 +11,7 @@
             <img src="<%= catchRecord.user_img_url %>" alt="">
         </a>
     </div>
+
     
 </section>
 
@@ -15,6 +19,19 @@
 
     <section class="photos">
         <img src="<%= catchRecord.image_url %>" alt="">
+
+        <% if (isCatchOwner) { %>
+            <div class="modify">
+                <form action="/catches/<%= catchRecord.catch_id %>/edit" class="edit">
+                    <button>Edit Catch details</button>
+                </form>
+    
+                <form action="/catches/<%= catchRecord.catch_id %>" class="edit" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <button>Delete Catch</button>
+                </form>
+            </div>
+        <% } %>
     </section>
 
 

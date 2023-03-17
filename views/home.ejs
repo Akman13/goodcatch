@@ -1,3 +1,6 @@
+<% if (isLoggedIn()) { %>
+    <h3 class="welcome">Welcome back <%= currentUser.username %></h3>
+<% } %>
 <section class="grid-header">
             
     <h2>Recent Catches</h2>
@@ -18,9 +21,6 @@
 
 
 <section class="grid-cards">
-
-
-
 
 
     <% for (catchCard of catches) { %>
@@ -48,65 +48,5 @@
 
     <% } %>
 
-    <article>
-        <div class="img-tab">
-            <a href="#" class="username">Username here</a>
-            <a href="#">
-                <img src="/images/water-bg.jpg" alt="" class="catch-img">
-            </a>
-
-        </div>
-        
-        <div class="info-tab">
-            <p class="caption">Caption of the catch</p>
-            
-            <footer>
-                <p>Location</p>
-                <p>Date caught</p>
-            </footer>
-
-        </div>
-    </article>
-
-    <article>
-        <div class="img-tab">
-            <a href="#" class="username">Username here</a>
-            <a href="#">
-                <img src="/images/water-bg.jpg" alt="" class="catch-img">
-            </a>
-
-        </div>
-        
-        <div class="info-tab">
-            <p class="caption">Caption of the catch</p>
-            
-            <footer>
-                <p>Location</p>
-                <p>Date caught</p>
-            </footer>
-
-        </div>
-    </article>
-
-    <article>
-        <div class="img-tab">
-            <a href="#" class="username">Username here</a>
-            <a href="#">
-                <img src="/images/water-bg.jpg" alt="" class="catch-img">
-            </a>
-
-        </div>
-        
-        <div class="info-tab">
-            <p class="caption">Caption of the catch</p>
-            
-            <footer>
-                <p>Location</p>
-                <p>Date caught</p>
-            </footer>
-
-        </div>
-    </article>
-    
 
 </section>
