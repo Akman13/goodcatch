@@ -14,10 +14,17 @@ After preparation of wireframes, a preliminary flowchart was prepared to help gu
 The development was started with the setup of a local repo, a GitHub repo and a Render host service, followed by the installation of the modules that would be required for use of the app. The main technologies used were Postgres and Express. For a list of the modules used, please refer to the package.json file.
 
 
+# Features
+- User creation & editing
+- Catch creation, editing & deletion
+
+
 # Unsolved problems
 Currently the styling of the home page does is not able to display more catches than 12, which is what the number of cells that the existing grid has been setup to handle.
 
 Additionally, the responsiveness of the website is not great. Some of the pages' elements will begin clashing with each other if the page is being viewed on a small screen or a mobile device. Being an app intended for ease of use and quick submissions in the moment, this is a priority and will be addressed in the near future.
+
+Occasionally, the usernames displayed on the catches will not be loaded properly and will require refreshing of the home page for them to appear. The cause of this is yet unknown and is being investigated.
 
 # Future additions
 Due to resource constraints, not all the intended features could be implemented as of now. 
