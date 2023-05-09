@@ -37,6 +37,10 @@
         <label for="catchDate">Date</label>
         <input type="date" name="catchDate" id="catchDate" value="<%= catchData.catch_date %>">
 
+        <% if (badCatchDetails) { %>
+            <p class="about-message warning"><%= message.invalidCreation %></p>
+        <% } %>
+
         <button>Share</button>
     
     </form>

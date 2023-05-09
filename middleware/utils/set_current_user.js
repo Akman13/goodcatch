@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../../db");
 
 // Used to store the current user details into res.locals for use by the templates
 function setCurrentUser(req, res, next) {

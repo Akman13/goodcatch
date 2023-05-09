@@ -1,6 +1,3 @@
-const db = require('./../db');
-
-
 function validSignupInput (req, res, next) {
     const message = {};
     

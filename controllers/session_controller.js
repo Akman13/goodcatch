@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require("./../db");
 const bcrypt = require('bcrypt');
-const checkForEmail = require('./../middleware/check_for_email');
+const checkForEmail = require('./../middleware/users/check_for_email');
 
 
 const router = express.Router();

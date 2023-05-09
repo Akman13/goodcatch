@@ -7,6 +7,8 @@ function viewHelpers(req, res, next) {
         }
     }
 
+    res.locals.badCatchDetails = false;
+
 
     res.locals.badUsername = false;
     res.locals.badEmail = false;

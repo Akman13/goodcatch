@@ -1,4 +1,4 @@
-const db = require("./../db");
+const db = require("../../db");
 
 // Checks the database to see if the email exists
 function checkForEmail(req, res, next) {
@@ -12,7 +12,6 @@ function checkForEmail(req, res, next) {
 
         } else if (dbRes.rows.length === 0) {
             const emailMessage = 'The email you have provided does not exist.'
-            console.log('Line 15 of check for email')
             res.locals.emailExists = false;
             res.render('login', {emailMessage});
 

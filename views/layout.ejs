@@ -28,10 +28,10 @@
             </form>
             <% } %>
 
-            <form class="search">
+            <!-- <form class="search">
                 <input type="text" placeholder="Search...">
-                <!-- <button class="search"></button> -->
-            </form>
+                <button class="search"></button>
+            </form> -->
 
             <% if(isLoggedIn()) { %>
                 <a href="/users/<%= currentUser.user_id %>" class="profile"><img src="<%= currentUser.user_img_url %>" alt=""></a>

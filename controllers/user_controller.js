@@ -1,12 +1,12 @@
 const express = require('express');
 const db = require("./../db");
-const upload = require('./../middleware/upload');
-const validSignupInput = require('./../middleware/verify_signup');
-const validEditInput = require('./../middleware/verify_user_update');
-const validEmailUsername = require('./../middleware/verify_unique_email_username');
-const setCurrentSession = require('./../middleware/set_current_session');
-const createNewUser = require('./../middleware/create_user');
-const checkProfileOwnership = require('../middleware/check_profile_ownership');
+const upload = require('./../middleware/utils/upload');
+const validSignupInput = require('../middleware/users/verify_signup');
+const validUserEditInput = require('../middleware/users/verify_user_update');
+const validEmailUsername = require('../middleware/users/verify_unique_email_username');
+const setCurrentSession = require('../middleware/users/set_current_session');
+const createNewUser = require('../middleware/users/create_user');
+const checkProfileOwnership = require('../middleware/users/check_profile_ownership');
 
 
 
@@ -15,7 +15,7 @@ const router = express.Router();
 // Remaining:
 
 router.get('/signup', (req, res) => {
-    res.render('signup');
+res.render('signup');
 })
 
 
@@ -29,7 +29,7 @@ router.get('/users/:id/edit', checkProfileOwnership, (req, res) => {
 
         } else {
             const userData = dbRes.rows[0];
-            console.log(userData.user_about);
+            // console.log(userData.user_about);
             res.render('edit-profile-form', {userData});
         }
     })
@@ -60,7 +60,7 @@ router.post('/users', validSignupInput, validEmailUsername, createNewUser, setCu
 })
 
 
-router.put('/users/:id', checkProfileOwnership, validEditInput, (req, res) => {
+router.put('/users/:id', checkProfileOwnership, validUserEditInput, (req, res) => {
     const sql = 'UPDATE users SET user_img_url=$1, user_about=$2 WHERE user_id=$3';
 
     db.query(sql, [req.file.path, req.body.about, req.params.id], (dbErr, dbRes) => {

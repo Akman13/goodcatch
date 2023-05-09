@@ -1,8 +1,8 @@
 const multiparty = require('multiparty');
 
 function multiParse(req, res, next) {
-    console.log('Line 4 of multipart, this is the req.method:');
-    console.log(req.method);
+    // console.log('Line 4 of multipart, this is the req.method:');
+    // console.log(req.method);
     if (req.url === '/catches/:id' && req.method === 'POST') {
         // parse a file upload
         const form = new multiparty.Form();

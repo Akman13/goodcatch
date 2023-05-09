@@ -23,13 +23,13 @@ app.use(session({
 
 
 
-const methodOverride = require('./middleware/method_override');
+const methodOverride = require('./middleware/utils/method_override');
 const catchController = require('./controllers/catch_controller');
 const sessionController = require('./controllers/session_controller');
 const userController = require('./controllers/user_controller');
-const setCurrentUser = require('./middleware/set_current_user');
-const viewHelpers = require('./middleware/view_helpers');
-const upload = require('./middleware/upload');
+const setCurrentUser = require('./middleware/utils/set_current_user');
+const viewHelpers = require('./middleware/utils/view_helpers');
+const upload = require('./middleware/utils/upload');
 
 
 
@@ -43,20 +43,14 @@ app.use(catchController);
 app.use(sessionController);
 app.use(userController);
 
-
-
-
-/*
-Incorporating sessions into the page. What does that look like?
-We have a session created from the above API
-When/if the user logs in, then store so in the session object
-If the user logs out, then delete the session (?)
-
-In the layout, check if the user is logged in or not
-If they are - then 
-*/
-
-
+// Modify the catch forms to handle EJS message data
+// This is sent if the input fields are invalid
+// The data flow looks something like:
+//  - A middleware checks for valid data input
+//  - This middleware is at the PUT and POST routes for catches
+//  - If the input is invalid: 
+//  - Change the view-helped states, render with the warning message
+//  - Else, next()
 
 
 

@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../../db");
 
 function checkProfileOwnership(req, res, next) {
     if(!req.session.user_id) {

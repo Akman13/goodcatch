@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../../db");
 
 // Middleware function used to reset the current Session to the newly registered user
 function setCurrentSession(req, res, next) {

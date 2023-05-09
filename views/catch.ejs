@@ -1,6 +1,10 @@
 <% if (isLoggedIn()) { %>
     <h3 class="welcome">Welcome back <%= currentUser.username %></h3>
+<% } else { %>
+    <h3 class="welcome"></h3>
 <% } %>
+    
+
 <section class="catch-header">
     <h2><%= catchRecord.caption %></h2>
 
