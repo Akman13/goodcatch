@@ -1,4 +1,3 @@
-<!-- Edit only the pic or the bio -->
 <div class="form-bg">
     
     <form action="/users/<%= userData.user_id %>" method="post" class="signup-page" enctype="multipart/form-data">
@@ -12,13 +11,13 @@
         <label for="photo">Upload a profile picture</label>
         <input type="file" name="uploaded-file">
         <% if (badPhoto) { %>
-            <p class="password-message warning"><%= message.photoMessage %></p>
+            <p class="password-message warning"><%= userData.photoMessage %></p>
         <% } %>
 
         <label for="about">About you</label>
         <textarea name="about" id="about" placeholder="Share a bit about yourself"><%= userData.user_about %></textarea>
         <% if (badAbout) { %>
-            <p class="about-message warning"><%= message.aboutMessage %></p>
+            <p class="about-message warning"><%= userData.aboutMessage %></p>
         <% } %>
         
         <button>Edit profile</button>

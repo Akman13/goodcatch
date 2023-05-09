@@ -12,7 +12,6 @@ const checkProfileOwnership = require('../middleware/users/check_profile_ownersh
 
 const router = express.Router();
 
-// Remaining:
 
 router.get('/signup', (req, res) => {
 res.render('signup');
@@ -29,7 +28,6 @@ router.get('/users/:id/edit', checkProfileOwnership, (req, res) => {
 
         } else {
             const userData = dbRes.rows[0];
-            // console.log(userData.user_about);
             res.render('edit-profile-form', {userData});
         }
     })
@@ -61,6 +59,7 @@ router.post('/users', validSignupInput, validEmailUsername, createNewUser, setCu
 
 
 router.put('/users/:id', checkProfileOwnership, validUserEditInput, (req, res) => {
+    console.log('PUT request made')
     const sql = 'UPDATE users SET user_img_url=$1, user_about=$2 WHERE user_id=$3';
 
     db.query(sql, [req.file.path, req.body.about, req.params.id], (dbErr, dbRes) => {

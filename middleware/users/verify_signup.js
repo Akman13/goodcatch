@@ -35,7 +35,7 @@ function validSignupInput (req, res, next) {
         message.passwordMessage = 'Please ensure you have provided a valid password.'
     }
 
-    const photoEmpty = (req.file.path.trim() === "");
+    const photoEmpty = !req.file;
     if (photoEmpty) {
         res.locals.badPhoto = true;
         message.photoMessage = 'Please ensure you have selected a photo';

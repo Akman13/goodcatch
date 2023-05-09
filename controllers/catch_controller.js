@@ -59,6 +59,7 @@ router.get('/catches/:id/edit', checkCatchOwnership, (req, res) => { //GET an ed
 
         } else {
             const catchData = dbRes.rows[0];
+            console.log('AKMAN catchData', catchData)
             res.render('edit-catch-form', {catchData});
         }
     })
@@ -122,7 +123,6 @@ router.post('/catches', verifyCatchInput, (req, res) => { //POST a new catch
 
 
 router.put('/catches/:id', checkCatchOwnership, verifyCatchInput, (req, res) => { //PUT an updated catch
-    console.log('AKMAN req.file.path', req.file)
     
     const sql = 'UPDATE catches SET caption=$1, experience=$2, image_url=$3, catch_state=$4, catch_location=$5, catch_date=$6 WHERE catch_id=$7';
 
