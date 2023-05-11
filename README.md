@@ -28,13 +28,13 @@ GoodCatch is a live web app that allows users to view Catches shared by fellow f
 
 1. Sign in/Sign out
 - Session storage used to track session data for the client
-<!-- User creation Gif here -->
+![user-signup](https://github.com/Akman13/goodcatch/blob/main/gifs/user-signup.gif)
 
 
 2. User creation and Catch submissions
 - Users can upload an image for the profile picture and for their shared Catches
 - Users have full CRUD control of their created catches, and can Create, Read and Update (but not Delete) their profiles
-<!-- Catch Submission Gif here -->
+![catch-submission](https://github.com/Akman13/goodcatch/blob/main/gifs/catch-submission.gif)
 
 
 3. Conditional rendering
@@ -46,7 +46,7 @@ GoodCatch is a live web app that allows users to view Catches shared by fellow f
 - During login, user email input is checked in the database to verify its presence. For valid email inputs, the password provided is checked for correctness
 - During form submissions, the user input is validated to ensure all required fields have been populated
 - If the validation fails in any of the above, the page is refreshed and the appropriate warning message(s) are displayed
-<!-- Data Validation Gif here -->
+![data-validation](https://github.com/Akman13/goodcatch/blob/main/gifs/data-validation.gif)
 
 # Unsolved problems
 - The responsiveness of the website Catches is in need of further improvement.
