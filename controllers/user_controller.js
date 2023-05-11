@@ -59,7 +59,6 @@ router.post('/users', validSignupInput, validEmailUsername, createNewUser, setCu
 
 
 router.put('/users/:id', checkProfileOwnership, validUserEditInput, (req, res) => {
-    console.log('PUT request made')
     const sql = 'UPDATE users SET user_img_url=$1, user_about=$2 WHERE user_id=$3';
 
     db.query(sql, [req.file.path, req.body.about, req.params.id], (dbErr, dbRes) => {

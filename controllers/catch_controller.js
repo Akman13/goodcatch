@@ -4,6 +4,7 @@ const upload = require('../middleware/utils/upload');
 const checkCatchOwnership = require('../middleware/catches/check_catch_ownership');
 const verifyCatchInput = require('../middleware/catches/verify_catch_input');
 const verifyLoggedIn = require('../middleware/catches/verify_logged_in');
+const verifyUpdateCatchInput = require('../middleware/catches/verify_catch_update_input');
 
 
 const router = express.Router();
@@ -122,7 +123,7 @@ router.post('/catches', verifyCatchInput, (req, res) => { //POST a new catch
 })
 
 
-router.put('/catches/:id', checkCatchOwnership, verifyCatchInput, (req, res) => { //PUT an updated catch
+router.put('/catches/:id', checkCatchOwnership, verifyUpdateCatchInput, (req, res) => { //PUT an updated catch
     
     const sql = 'UPDATE catches SET caption=$1, experience=$2, image_url=$3, catch_state=$4, catch_location=$5, catch_date=$6 WHERE catch_id=$7';
 

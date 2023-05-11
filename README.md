@@ -4,6 +4,15 @@ A social platform for fishing hobbyists to create a profile and share their fish
 # URL
 This app has been deployed on Render and be accessed at using this link: https://goodcatch.onrender.com/ 
 
+Sample user logins for a quick start:
+```
+email: janedoe@ga.co
+password: pudding
+
+email: johndoe@ga.co
+password: pudding
+```
+
 # Development
 The start of development involved the setup of various wireframe drawings of the various views that would be rendered by the server.
 These wireframes were later referred to during the preparation of the views as a convenient way to draft an initial view's HTML and CSS. 
@@ -19,10 +28,14 @@ GoodCatch is a live web app that allows users to view Catches shared by fellow f
 
 1. Sign in/Sign out
 - Session storage used to track session data for the client
+<!-- User creation Gif here -->
+
 
 2. User creation and Catch submissions
 - Users can upload an image for the profile picture and for their shared Catches
-- Users can edit their profile details and details of Catches that they have created
+- Users have full CRUD control of their created catches, and can Create, Read and Update (but not Delete) their profiles
+<!-- Catch Submission Gif here -->
+
 
 3. Conditional rendering
 - Different layouts for users who are logged in / not logged in
@@ -33,7 +46,7 @@ GoodCatch is a live web app that allows users to view Catches shared by fellow f
 - During login, user email input is checked in the database to verify its presence. For valid email inputs, the password provided is checked for correctness
 - During form submissions, the user input is validated to ensure all required fields have been populated
 - If the validation fails in any of the above, the page is refreshed and the appropriate warning message(s) are displayed
-
+<!-- Data Validation Gif here -->
 
 # Unsolved problems
 - The responsiveness of the website Catches is in need of further improvement.
