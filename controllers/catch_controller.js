@@ -21,7 +21,6 @@ router.get('/', (req, res) => { //GET the home page
 
         } else {
             const catches = dbRes.rows;
-            console.log('catches', catches.length);
 
             for (let i = 0; i < dbRes.rows.length; i++) {
                 const sqlUsername = `SELECT username from users where user_id=$1;`;
@@ -61,7 +60,6 @@ router.get('/catches/:id/edit', checkCatchOwnership, (req, res) => { //GET an ed
 
         } else {
             const catchData = dbRes.rows[0];
-            console.log('AKMAN catchData', catchData)
             res.render('edit-catch-form', {catchData});
         }
     })

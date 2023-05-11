@@ -43,14 +43,7 @@ app.use(catchController);
 app.use(sessionController);
 app.use(userController);
 
-// Modify the catch forms to handle EJS message data
-// This is sent if the input fields are invalid
-// The data flow looks something like:
-//  - A middleware checks for valid data input
-//  - This middleware is at the PUT and POST routes for catches
-//  - If the input is invalid: 
-//  - Change the view-helped states, render with the warning message
-//  - Else, next()
+
 
 
 
