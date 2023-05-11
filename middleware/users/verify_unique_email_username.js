@@ -14,7 +14,7 @@ function validEmailUsername (req, res, next) {
             if (dbRes.rowCount > 0) {
                 res.locals.badUsername = true;
                 message.usernameMessage = 'This username already exists';
-                console.log('Line 16 of verify unique email username triggered');
+                // console.log('Line 16 of verify unique email username triggered');
             }
             
             const sqlEmail = 'SELECT * FROM users WHERE LOWER(email)=LOWER($1);';

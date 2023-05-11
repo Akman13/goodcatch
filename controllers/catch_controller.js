@@ -12,7 +12,8 @@ const router = express.Router();
 
 router.get('/', (req, res) => { //GET the home page
 
-    const sql = 'SELECT * FROM catches;';
+    const sql = 'SELECT * FROM catches ORDER BY catch_date DESC LIMIT 12;';
+
     db.query(sql, (dbErr, dbRes) => {
         if (dbErr) {
             console.log(dbErr);
@@ -20,6 +21,7 @@ router.get('/', (req, res) => { //GET the home page
 
         } else {
             const catches = dbRes.rows;
+            console.log('catches', catches.length);
 
             for (let i = 0; i < dbRes.rows.length; i++) {
                 const sqlUsername = `SELECT username from users where user_id=$1;`;

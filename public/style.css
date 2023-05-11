@@ -206,8 +206,9 @@ main {
 .grid-cards {
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(240px, 100%/5)), 1fr));
+    /* grid-template-rows: 1fr 1fr 1fr; */
     gap: 30px;
     height: 88%;
 }
